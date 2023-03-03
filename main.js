@@ -34,7 +34,7 @@ function checkGame(mark) {
     checkColumns(mark);
     checkRows(mark);
     checkDiagonals(mark);
-    if (amountOfMoves === 9) {
+    if (amountOfMoves === 9 && gameState === 0) {
         alert("It's a draw!");
         gameState = 1;
     }
