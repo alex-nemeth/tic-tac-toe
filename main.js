@@ -18,6 +18,7 @@ boxes.push((boxNine = document.querySelector(".nine")));
 function setNames() {
     playerOne = document.querySelector(".playerone").value;
     playerTwo = document.querySelector(".playertwo").value;
+    reset();
 }
 
 function returnPlayer(mark) {
@@ -53,6 +54,7 @@ function checkColumns(mark) {
         boxes[3].textContent === mark &&
         boxes[6].textContent === mark
     ) {
+        highlight(0, 3, 6);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
@@ -60,6 +62,7 @@ function checkColumns(mark) {
         boxes[4].textContent === mark &&
         boxes[7].textContent === mark
     ) {
+        highlight(1, 4, 7);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
@@ -67,6 +70,7 @@ function checkColumns(mark) {
         boxes[5].textContent === mark &&
         boxes[8].textContent === mark
     ) {
+        highlight(2, 5, 8);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     }
@@ -78,6 +82,7 @@ function checkRows(mark) {
         boxes[1].textContent === mark &&
         boxes[2].textContent === mark
     ) {
+        highlight(0, 1, 2);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
@@ -85,6 +90,7 @@ function checkRows(mark) {
         boxes[4].textContent === mark &&
         boxes[5].textContent === mark
     ) {
+        highlight(3, 4, 5);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
@@ -92,6 +98,7 @@ function checkRows(mark) {
         boxes[7].textContent === mark &&
         boxes[8].textContent === mark
     ) {
+        highlight(6, 7, 8);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     }
@@ -103,6 +110,7 @@ function checkDiagonals() {
         boxes[4].textContent === mark &&
         boxes[8].textContent === mark
     ) {
+        highlight(0, 4, 8);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
@@ -110,14 +118,22 @@ function checkDiagonals() {
         boxes[4].textContent === mark &&
         boxes[6].textContent === mark
     ) {
+        highlight(2, 4, 6);
         alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     }
 }
 
+function highlight(box1, box2, box3) {
+    boxes[box1].style.backgroundColor = "green";
+    boxes[box2].style.backgroundColor = "green";
+    boxes[box3].style.backgroundColor = "green";
+}
+
 function reset() {
     for (let i = 0; i < boxes.length; i++) {
         boxes[i].textContent = "";
+        boxes[i].style.backgroundColor = "white";
     }
     gameState = 0;
     amountOfMoves = 0;
