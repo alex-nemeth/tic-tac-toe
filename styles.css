@@ -38,6 +38,7 @@ h3 {
 }
 
 .box {
+    padding-top: 1vh;
     border: 5px solid black;
     font-size: 100px;
     font-weight: bold;
