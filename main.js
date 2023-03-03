@@ -2,6 +2,8 @@ const boxes = [];
 let mark = "X";
 let gameState = 0;
 let amountOfMoves = 0;
+let playerOne = "Player 1";
+let playerTwo = "Player 2";
 
 boxes.push((boxOne = document.querySelector(".one")));
 boxes.push((boxTwo = document.querySelector(".two")));
@@ -13,9 +15,14 @@ boxes.push((boxSeven = document.querySelector(".seven")));
 boxes.push((boxEight = document.querySelector(".eight")));
 boxes.push((boxNine = document.querySelector(".nine")));
 
-function assignPlayer(mark) {
-    if (mark === "X") return "Player 1";
-    else return "Player 2";
+function setNames() {
+    playerOne = document.querySelector(".playerone").value;
+    playerTwo = document.querySelector(".playertwo").value;
+}
+
+function returnPlayer(mark) {
+    if (mark === "X") return playerOne;
+    else return playerTwo;
 }
 
 function move(index) {
@@ -46,21 +53,21 @@ function checkColumns(mark) {
         boxes[3].textContent === mark &&
         boxes[6].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
         boxes[1].textContent === mark &&
         boxes[4].textContent === mark &&
         boxes[7].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
         boxes[2].textContent === mark &&
         boxes[5].textContent === mark &&
         boxes[8].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     }
 }
@@ -71,21 +78,21 @@ function checkRows(mark) {
         boxes[1].textContent === mark &&
         boxes[2].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
         boxes[3].textContent === mark &&
         boxes[4].textContent === mark &&
         boxes[5].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
         boxes[6].textContent === mark &&
         boxes[7].textContent === mark &&
         boxes[8].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     }
 }
@@ -96,14 +103,14 @@ function checkDiagonals() {
         boxes[4].textContent === mark &&
         boxes[8].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     } else if (
         boxes[2].textContent === mark &&
         boxes[4].textContent === mark &&
         boxes[6].textContent === mark
     ) {
-        alert(`${assignPlayer(mark)} wins!`);
+        alert(`${returnPlayer(mark)} wins!`);
         gameState = 1;
     }
 }

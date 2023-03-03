@@ -20,6 +20,17 @@
             <div class="box eight" onclick="move(7)"></div>
             <div class="box nine" onclick="move(8)"></div>
         </div>
-        <button class="reset" onclick="reset()">Reset Game</button>
+        <div class="options">
+            <div class="playername">
+                <label for="Player 1">Player 1</label>
+                <input class="playerone" type="text" name="Player 1" />
+            </div>
+            <div class="playername">
+                <label for="Player 2">Player 2</label>
+                <input class="playertwo" type="text" name="Player 2" />
+            </div>
+            <button type="submit" onclick="setNames()">Start Game</button>
+            <button class="reset" onclick="reset()">Reset</button>
+        </div>
     </body>
 </html>
