@@ -1,6 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Mynerve&family=Rubik+Iso&display=swap");
 
 body {
+    size: 100vh 100vw;
     font-family: "Mynerve", cursive;
     background: rgb(3, 161, 111);
     background: linear-gradient(
@@ -8,8 +9,6 @@ body {
         rgba(3, 161, 111, 1) 0%,
         rgba(0, 166, 200, 1) 100%
     );
-    background-size: cover;
-    background-repeat: no-repeat;
 }
 
 h1 {
