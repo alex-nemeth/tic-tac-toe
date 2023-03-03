@@ -1,3 +1,7 @@
+body {
+    font-family: "Quicksand", sans-serif;
+}
+
 .gameboard {
     display: grid;
     grid-template-columns: 200px 200px 200px;
@@ -6,4 +10,7 @@
 
 .box {
     border: 5px solid black;
+    font-size: 100px;
+    font-weight: bold;
+    text-align: center;
 }
