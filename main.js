@@ -18,8 +18,10 @@ boxes.push((boxEight = document.querySelector(".eight")));
 boxes.push((boxNine = document.querySelector(".nine")));
 
 function setNames() {
-    playerOne = document.querySelector(".playerone").value;
-    playerTwo = document.querySelector(".playertwo").value;
+    if (document.querySelector(".playerone").value)
+        playerOne = document.querySelector(".playerone").value;
+    if (document.querySelector(".playertwo").value)
+        playerTwo = document.querySelector(".playertwo").value;
     reset();
 }
 
@@ -109,9 +111,9 @@ function checkDiagonals() {
 
 function gameWin(mark, box1, box2, box3) {
     winMessage.textContent = `${returnPlayer(mark)} wins!`;
-    boxes[box1].style.backgroundColor = "green";
-    boxes[box2].style.backgroundColor = "green";
-    boxes[box3].style.backgroundColor = "green";
+    boxes[box1].style.backgroundColor = "rgb(97, 233, 97)";
+    boxes[box2].style.backgroundColor = "rgb(97, 233, 97)";
+    boxes[box3].style.backgroundColor = "rgb(97, 233, 97)";
     gameState = 1;
 }
 

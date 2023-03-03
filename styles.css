@@ -1,11 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Mynerve&family=Rubik+Iso&display=swap");
+
 body {
-    font-family: "Quicksand", sans-serif;
+    font-family: "Mynerve", cursive;
+    background: rgb(3, 161, 111);
+    background: linear-gradient(
+        45deg,
+        rgba(3, 161, 111, 1) 0%,
+        rgba(0, 166, 200, 1) 100%
+    );
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+h1 {
+    font-family: "Rubik Iso", cursive;
+    font-weight: bold;
+    font-size: 50px;
+    text-shadow: 3px 3px rgb(22, 154, 215);
+}
+
+h3 {
+    font-size: 35px;
+    min-height: 50px;
+    font-weight: bold;
+    margin: 20px;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .gameboard {
     display: grid;
-    grid-template-columns: 200px 200px 200px;
-    grid-template-rows: 200px 200px 200px;
+    grid-template-columns: 150px 150px 150px;
+    grid-template-rows: 150px 150px 150px;
 }
 
 .box {
@@ -13,8 +43,45 @@ body {
     font-size: 100px;
     font-weight: bold;
     text-align: center;
+    background-color: white;
+    border-radius: 20px;
+    margin: 1px;
+}
+
+label {
+    min-width: 80px;
+    font-weight: bold;
 }
 
 .options {
     display: flex;
+    margin: 20px 0px;
+}
+
+.buttons {
+    display: flex;
+}
+
+button {
+    width: 90px;
+    margin-left: 10px;
+    font-family: "Mynerve", cursive;
+    font-weight: bold;
+    border-radius: 10px;
+}
+
+button:hover {
+    background-color: rgb(213, 213, 213);
+}
+
+button:active {
+    background-color: rgb(183, 183, 183);
+}
+
+input {
+    border-radius: 10px;
+    margin-top: 5px;
+    height: 25px;
+    margin-left: 5px;
+    margin-right: 10px;
 }

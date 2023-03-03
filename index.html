@@ -4,35 +4,43 @@
         <meta charset="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Tic-Tac-Toe!</title>
+        <title>Tic Tac Toe!</title>
         <link rel="stylesheet" href="styles.css" />
         <script src="main.js" defer></script>
     </head>
     <body>
-        <h1>Tic-Tac-Toe!</h1>
-        <h3 class="winmessage"></h3>
-        <div class="gameboard">
-            <div class="box one" onclick="move(0)"></div>
-            <div class="box two" onclick="move(1)"></div>
-            <div class="box three" onclick="move(2)"></div>
-            <div class="box four" onclick="move(3)"></div>
-            <div class="box five" onclick="move(4)"></div>
-            <div class="box six" onclick="move(5)"></div>
-            <div class="box seven" onclick="move(6)"></div>
-            <div class="box eight" onclick="move(7)"></div>
-            <div class="box nine" onclick="move(8)"></div>
-        </div>
-        <div class="options">
-            <div class="playername">
-                <label for="Player 1">Player 1</label>
-                <input class="playerone" type="text" name="Player 1" />
+        <div class="content">
+            <h1>TIC TAC TOE!</h1>
+            <h3 class="winmessage"></h3>
+            <div class="gameboard">
+                <div class="box one" onclick="move(0)"></div>
+                <div class="box two" onclick="move(1)"></div>
+                <div class="box three" onclick="move(2)"></div>
+                <div class="box four" onclick="move(3)"></div>
+                <div class="box five" onclick="move(4)"></div>
+                <div class="box six" onclick="move(5)"></div>
+                <div class="box seven" onclick="move(6)"></div>
+                <div class="box eight" onclick="move(7)"></div>
+                <div class="box nine" onclick="move(8)"></div>
             </div>
-            <div class="playername">
-                <label for="Player 2">Player 2</label>
-                <input class="playertwo" type="text" name="Player 2" />
+            <div class="options">
+                <div class="playernames">
+                    <div class="playername">
+                        <label for="Player 1">Player 1</label>
+                        <input class="playerone" type="text" name="Player 1" />
+                    </div>
+                    <div class="playername">
+                        <label for="Player 2">Player 2</label>
+                        <input class="playertwo" type="text" name="Player 2" />
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button class="start" type="submit" onclick="setNames()">
+                        Start Game
+                    </button>
+                    <button class="reset" onclick="reset()">Reset</button>
+                </div>
             </div>
-            <button type="submit" onclick="setNames()">Start Game</button>
-            <button class="reset" onclick="reset()">Reset</button>
         </div>
     </body>
 </html>
