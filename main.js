@@ -5,6 +5,8 @@ let amountOfMoves = 0;
 let playerOne = "Player 1";
 let playerTwo = "Player 2";
 
+const winMessage = document.querySelector(".winmessage");
+
 boxes.push((boxOne = document.querySelector(".one")));
 boxes.push((boxTwo = document.querySelector(".two")));
 boxes.push((boxThree = document.querySelector(".three")));
@@ -43,7 +45,7 @@ function checkGame(mark) {
     checkRows(mark);
     checkDiagonals(mark);
     if (amountOfMoves === 9 && gameState === 0) {
-        alert("It's a draw!");
+        winMessage.textContent = `It's a draw!`;
         gameState = 1;
     }
 }
@@ -53,27 +55,20 @@ function checkColumns(mark) {
         boxes[0].textContent === mark &&
         boxes[3].textContent === mark &&
         boxes[6].textContent === mark
-    ) {
-        highlight(0, 3, 6);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    } else if (
+    )
+        gameWin(mark, 0, 3, 6);
+    else if (
         boxes[1].textContent === mark &&
         boxes[4].textContent === mark &&
         boxes[7].textContent === mark
-    ) {
-        highlight(1, 4, 7);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    } else if (
+    )
+        gameWin(mark, 1, 4, 7);
+    else if (
         boxes[2].textContent === mark &&
         boxes[5].textContent === mark &&
         boxes[8].textContent === mark
-    ) {
-        highlight(2, 5, 8);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    }
+    )
+        gameWin(mark, 2, 5, 8);
 }
 
 function checkRows(mark) {
@@ -81,27 +76,20 @@ function checkRows(mark) {
         boxes[0].textContent === mark &&
         boxes[1].textContent === mark &&
         boxes[2].textContent === mark
-    ) {
-        highlight(0, 1, 2);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    } else if (
+    )
+        gameWin(mark, 0, 1, 2);
+    else if (
         boxes[3].textContent === mark &&
         boxes[4].textContent === mark &&
         boxes[5].textContent === mark
-    ) {
-        highlight(3, 4, 5);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    } else if (
+    )
+        gameWin(mark, 3, 4, 5);
+    else if (
         boxes[6].textContent === mark &&
         boxes[7].textContent === mark &&
         boxes[8].textContent === mark
-    ) {
-        highlight(6, 7, 8);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    }
+    )
+        gameWin(mark, 6, 7, 8);
 }
 
 function checkDiagonals() {
@@ -109,25 +97,22 @@ function checkDiagonals() {
         boxes[0].textContent === mark &&
         boxes[4].textContent === mark &&
         boxes[8].textContent === mark
-    ) {
-        highlight(0, 4, 8);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    } else if (
+    )
+        gameWin(mark, 0, 4, 8);
+    else if (
         boxes[2].textContent === mark &&
         boxes[4].textContent === mark &&
         boxes[6].textContent === mark
-    ) {
-        highlight(2, 4, 6);
-        alert(`${returnPlayer(mark)} wins!`);
-        gameState = 1;
-    }
+    )
+        gameWin(mark, 2, 4, 6);
 }
 
-function highlight(box1, box2, box3) {
+function gameWin(mark, box1, box2, box3) {
+    winMessage.textContent = `${returnPlayer(mark)} wins!`;
     boxes[box1].style.backgroundColor = "green";
     boxes[box2].style.backgroundColor = "green";
     boxes[box3].style.backgroundColor = "green";
+    gameState = 1;
 }
 
 function reset() {
@@ -135,6 +120,7 @@ function reset() {
         boxes[i].textContent = "";
         boxes[i].style.backgroundColor = "white";
     }
+    winMessage.textContent = "";
     gameState = 0;
     amountOfMoves = 0;
     mark = "X";
