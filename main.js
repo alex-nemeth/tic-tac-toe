@@ -20,11 +20,13 @@ function assignPlayer(mark) {
 
 function move(index) {
     if (gameState === 0) {
-        boxes[index].textContent = mark;
-        amountOfMoves++;
-        checkGame(mark);
-        if (mark === "X") mark = "O";
-        else if (mark === "O") mark = "X";
+        if (!boxes[index].textContent) {
+            boxes[index].textContent = mark;
+            amountOfMoves++;
+            checkGame(mark);
+            if (mark === "X") mark = "O";
+            else if (mark === "O") mark = "X";
+        }
     }
 }
 
